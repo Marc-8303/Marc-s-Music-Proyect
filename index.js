@@ -24,6 +24,12 @@ if (!fs.existsSync('uploads')) {
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+
 // Ruta para subir archivos
 app.post('/upload', upload.single('mp3file'), (req, res) => {
   res.send('Archivo subido exitosamente');
