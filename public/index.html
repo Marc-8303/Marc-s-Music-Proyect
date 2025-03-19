@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marc's Music Player - 1.0</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <main class="main-content">
+
+        <div class="player-container">
+            <h2><i class="fa fa-headphones"></i> Marc's Music Player</h2>
+          <div class="player-info">            
+            <div class="track-info">
+              <p class="current-track">Reproduciendo: <span id="currentTrackName">Ninguna canción</span></p>
+              <div class="waveform">
+                <div class="wave"></div>
+              </div>
+            </div>
+          </div>
+          <div class="player-controls">
+            <div class="control-btns">
+              <button id="prevBtn" class="control-btn"><i class="fas fa-step-backward"></i></button>
+              <button id="playBtn" class="control-btn play-btn"><i class="fas fa-play"></i></button>
+              <button id="nextBtn" class="control-btn"><i class="fas fa-step-forward"></i></button>
+            </div>
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+              <div class="time-info">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+              </div>
+            </div>
+            <div class="volume-container">
+              <i class="fas fa-volume-up"></i>
+              <input type="range" min="0" max="1" step="0.01" value="0.7" class="volume-slider">
+            </div>
+          </div>
+        </div>
+        <audio id="audioPlayer"></audio>
+<br>
+
+      <section class="playlist-section">
+        <h2><i class="fas fa-list"></i> Lista de Reproducción</h2>
+        <ul id="playlist" class="playlist-items"></ul>
+      </section>
+
+      <div class="columns">
+        <section class="file-list">
+          <h2><i class="fas fa-folder"></i> Archivos Subidos</h2>
+          <ul id="fileList" class="file-items"></ul>
+        </section>
+      </div>
+
+      <section class="upload-section">
+        <h2><i class="fas fa-upload"></i> Subir Archivo MP3</h2>
+        <form id="uploadForm" class="upload-form">
+          <div class="file-input">
+            <input type="file" name="mp3file" accept=".mp3" required>
+            <span class="custom-file-input">Seleccionar archivo</span>
+          </div>
+          <button type="submit" class="btn upload-btn">Subir</button>
+        </form>
+      </section>
+
+      
+
+      
+    </main>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
